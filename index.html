@@ -86,12 +86,72 @@ button:hover{
     color:#777;
     font-size:13px;
 }
+
+/* New styles for games */
+.games{
+    display:flex;
+    gap:12px;
+    flex-direction:column;
+    align-items:stretch;
+    margin-top:18px;
+}
+
+.game{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:12px 14px;
+    background:rgba(255,255,255,0.02);
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.04);
+    color:#eaeaea;
+}
+
+.game .name{
+    text-align:left;
+}
+
+.small-btn{
+    padding:8px 12px;
+    border-radius:10px;
+    background:linear-gradient(90deg,#0077ff,#00d084);
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+.copy-row{
+    display:flex;
+    gap:8px;
+    margin-top:14px;
+}
+
+.copy-row input{
+    flex:1;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,0.06);
+    background:transparent;
+    color:#fff;
+}
+
+.copy-row button{
+    flex:0 0 auto;
+    padding:12px 14px;
+    border-radius:10px;
+}
+
+.copy-row input:focus{
+    outline:none;
+    box-shadow:0 6px 20px rgba(0,210,140,0.12);
+}
+
 </style>
 
 </head>
 <body>
 
-<div class="card">
+<div class="card" id="card">
 
 <div class="logo">🎮</div>
 
@@ -99,15 +159,84 @@ button:hover{
 
 <p>Discover modern Roblox Lua resources and script collections.</p>
 
-<button onclick="alert('Coming Soon!')">
-Start
-</button>
+<button id="startBtn">Start</button>
 
 <div class="footer">
 © 2026 Roblox Delta Scripts
 </div>
 
 </div>
+
+<script>
+const card = document.getElementById('card');
+const startBtn = document.getElementById('startBtn');
+
+startBtn.addEventListener('click', showGames);
+
+function showGames(){
+  card.innerHTML = `
+    <div class="logo">🎮</div>
+    <h1>Choose a Game</h1>
+    <p>Select one of the games below.</p>
+
+    <div class="games">
+      <div class="game">
+        <div class="name">
+          <div style="font-weight:700">Murder Mystery 2</div>
+          <div style="font-size:12px;color:#bdbdbd">A classic Roblox detective game</div>
+        </div>
+        <div>
+          <button class="small-btn" onclick="openGame('https://www.roblox.com/games/142823291')">Play</button>
+        </div>
+      </div>
+
+      <div class="game">
+        <div class="name">
+          <div style="font-weight:700">Adopt Me!</div>
+          <div style="font-size:12px;color:#bdbdbd">Popular roleplay & trading</div>
+        </div>
+        <div>
+          <button class="small-btn" onclick="openGame('https://www.roblox.com/games/920587237')">Play</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="copy-row">
+      <input id="comingText" value="Coming Soon" readonly onclick="this.select()" />
+      <button id="copyBtn" class="small-btn">Copy</button>
+    </div>
+
+    <div class="footer">© 2026 Roblox Delta Scripts</div>
+  `;
+
+  // attach copy handler after replacing innerHTML
+  document.getElementById('copyBtn').addEventListener('click', () => {
+    const input = document.getElementById('comingText');
+    input.select();
+    input.setSelectionRange(0, 99999); // for mobile
+    try {
+      navigator.clipboard.writeText(input.value).then(() => {
+        const btn = document.getElementById('copyBtn');
+        const original = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = original, 1200);
+      }).catch(() => {
+        document.execCommand('copy');
+        alert('Copied to clipboard');
+      });
+    } catch (e) {
+      // fallback for older browsers
+      document.execCommand('copy');
+      alert('Copied to clipboard');
+    }
+  });
+}
+
+function openGame(url){
+  // open in a new tab
+  window.open(url, '_blank');
+}
+</script>
 
 </body>
 </html>
