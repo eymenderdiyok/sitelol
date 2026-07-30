@@ -8,141 +8,38 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-body{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:linear-gradient(135deg,#0d1117,#161b22,#0d1117);
-    padding:20px;
-}
-
-body::before{
-    content:"";
-    position:fixed;
-    width:700px;
-    height:700px;
-    background:#00ffae20;
-    border-radius:50%;
-    filter:blur(140px);
-    top:10%;
-    left:5%;
-}
-
-.card{
-    position:relative;
-    z-index:2;
-    width:720px;
-    max-width:100%;
-    padding:36px;
-    text-align:center;
-    background:rgba(255,255,255,.04);
-    backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,.06);
-    border-radius:18px;
-    box-shadow:0 30px 80px rgba(0,0,0,.55);
-}
-
-.logo{
-    font-size:72px;
-}
-
-h1{
-    color:white;
-    margin-top:12px;
-    font-size:36px;
-}
-
-p{
-    color:#b5b5b5;
-    margin-top:8px;
-    margin-bottom:20px;
-}
-
-#startBtn{
-    width:220px;
-    padding:14px 18px;
-    border:none;
-    border-radius:14px;
-    cursor:pointer;
-    font-size:18px;
-    font-weight:700;
-    color:white;
-    background:linear-gradient(90deg,#00d084,#00ffae);
-    transition:.18s;
-    margin-top:8px;
-}
-
+*{ margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; }
+body{ min-height:100vh; display:flex; justify-content:center; align-items:center; background:linear-gradient(135deg,#0d1117,#161b22,#0d1117); padding:20px; }
+body::before{ content:""; position:fixed; width:700px; height:700px; background:#00ffae20; border-radius:50%; filter:blur(140px); top:10%; left:5%; }
+.card{ position:relative; z-index:2; width:720px; max-width:100%; padding:36px; text-align:center; background:rgba(255,255,255,.04); backdrop-filter:blur(18px); border:1px solid rgba(255,255,255,.06); border-radius:18px; box-shadow:0 30px 80px rgba(0,0,0,.55); }
+.logo{ font-size:72px; }
+h1{ color:white; margin-top:12px; font-size:36px; }
+p{ color:#b5b5b5; margin-top:8px; margin-bottom:20px; }
+#startBtn{ width:220px; padding:14px 18px; border:none; border-radius:14px; cursor:pointer; font-size:18px; font-weight:700; color:white; background:linear-gradient(90deg,#00d084,#00ffae); transition:.18s; margin-top:8px; }
 #startBtn:hover{ transform:translateY(-3px); }
-
-.options{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-    margin-top:18px;
-}
-
-.option{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    height:96px;
-    border-radius:12px;
-    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border:1px solid rgba(255,255,255,0.05);
-    color:#eaeaea;
-    font-size:22px;
-    font-weight:700;
-    cursor:pointer;
-    transition:.16s;
-    text-align:center;
-}
-
+.options{ display:flex; flex-direction:column; gap:14px; margin-top:18px; }
+.option{ display:flex; align-items:center; justify-content:center; height:96px; border-radius:12px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.05); color:#eaeaea; font-size:22px; font-weight:700; cursor:pointer; transition:.16s; text-align:center; }
 .option:hover{ transform:scale(1.02); box-shadow:0 10px 30px rgba(0,0,0,0.45); }
-
-.option.selected{
-    background:linear-gradient(90deg,#00d084,#00ffae);
-    color:#071212;
-    box-shadow:0 12px 30px rgba(0,255,174,0.16);
-}
-
-textarea{
-    width:100%;
-    min-height:160px;
-    margin-top:18px;
-    padding:14px;
-    border-radius:12px;
-    resize:vertical;
-    border:1px solid rgba(255,255,255,0.06);
-    background:rgba(0,0,0,0.3);
-    color:#fff;
-    font-family:'Poppins',sans-serif;
-    font-size:14px;
-}
-
-.footer{
-    margin-top:16px;
-    color:#999;
-    font-size:13px;
-}
-
-.note{
-    margin-top:8px;
-    color:#bdbdbd;
-    font-size:13px;
-}
-
-@media (max-width:520px){
-    .option{ height:78px; font-size:18px; }
-    textarea{ min-height:120px; }
-}
+.option.selected{ background:linear-gradient(90deg,#00d084,#00ffae); color:#071212; box-shadow:0 12px 30px rgba(0,255,174,0.16); }
+textarea{ width:100%; min-height:160px; margin-top:18px; padding:14px; border-radius:12px; resize:vertical; border:1px solid rgba(255,255,255,0.06); background:rgba(0,0,0,0.3); color:#fff; font-family:'Poppins',sans-serif; font-size:14px; }
+.footer{ margin-top:16px; color:#999; font-size:13px; }
+.note{ margin-top:8px; color:#bdbdbd; font-size:13px; }
+.admin-row{ display:flex; gap:8px; margin-top:12px; justify-content:center; }
+.admin-btn{ padding:10px 12px; border-radius:10px; background:linear-gradient(90deg,#414141,#2b2b2b); color:#fff; border:1px solid rgba(255,255,255,0.03); cursor:pointer; }
+.copy-btn{ padding:10px 12px; border-radius:10px; background:linear-gradient(90deg,#00d084,#00ffae); color:#071212; border:none; cursor:pointer; font-weight:700; }
+/* Keypad modal */
+.modal{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.45); z-index:9999; }
+.keypad{ width:320px; max-width:92%; background:linear-gradient(180deg,#0f1113,#111315); border-radius:14px; padding:18px; box-shadow:0 20px 60px rgba(0,0,0,0.6); color:#fff; }
+.keypad-display{ height:46px; border-radius:8px; background:rgba(255,255,255,0.03); margin-bottom:12px; display:flex; align-items:center; justify-content:space-between; padding:0 10px; font-size:18px; }
+.keypad-keys{ display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.key{ height:56px; display:flex; align-items:center; justify-content:center; background:linear-gradient(180deg,#1b1c1d,#151616); border-radius:10px; cursor:pointer; font-size:20px; border:1px solid rgba(255,255,255,0.03); }
+.key.action{ background:linear-gradient(90deg,#00d084,#00ffae); color:#071212; font-weight:700; }
+.key.small{ height:44px; }
+.keypad-footer{ display:flex; gap:8px; margin-top:12px; justify-content:space-between; }
+.kf-btn{ padding:8px 10px; border-radius:8px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.03); cursor:pointer; color:#ddd; }
+.kf-btn.danger{ background:linear-gradient(90deg,#ff5f6d,#ffc371); color:#071212; font-weight:700; }
+/* small screens */
+@media (max-width:520px){ .option{ height:78px; font-size:18px; } textarea{ min-height:120px; } }
 </style>
 
 </head>
@@ -151,55 +48,191 @@ textarea{
 <div class="card" id="card">
   <div class="logo">🎮</div>
   <h1>Roblox Delta Scripts</h1>
-  <p>Choose a game and paste your script below.</p>
+  <p>Choose a game and copy the script from the box below.</p>
 
   <button id="startBtn">Start</button>
 
   <div class="footer">© 2026 Roblox Delta Scripts</div>
 </div>
 
+<!-- Keypad modal template -->
+<div id="keypadModal" class="modal" style="display:none;">
+  <div class="keypad" role="dialog" aria-modal="true" aria-labelledby="keypadTitle">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+      <div id="keypadTitle" style="font-weight:700">Admin Access</div>
+      <button id="closeKeypad" class="kf-btn">Close</button>
+    </div>
+    <div class="keypad-display">
+      <div id="keypadMode">Enter Password</div>
+      <div id="keypadInput">●●●●●●●●●</div>
+    </div>
+    <div class="keypad-keys" id="keys">
+      <!-- keys inserted by JS -->
+    </div>
+    <div class="keypad-footer">
+      <button id="backspace" class="kf-btn">Back</button>
+      <button id="clearKeypad" class="kf-btn">Clear</button>
+      <button id="submitKeypad" class="kf-btn action">Enter</button>
+    </div>
+  </div>
+</div>
+
 <script>
 const card = document.getElementById('card');
 const startBtn = document.getElementById('startBtn');
+const keypadModal = document.getElementById('keypadModal');
+const keypadInput = document.getElementById('keypadInput');
+const keypadMode = document.getElementById('keypadMode');
+const closeKeypad = document.getElementById('closeKeypad');
+const keysContainer = document.getElementById('keys');
+const backspace = document.getElementById('backspace');
+const clearKeypad = document.getElementById('clearKeypad');
+const submitKeypad = document.getElementById('submitKeypad');
+
+let currentPin = '';
 
 startBtn.addEventListener('click', showOptions);
 
 function showOptions(){
+  renderMain();
+}
+
+function renderMain(){
+  const savedScript = localStorage.getItem('adminScript') || 'Coming soon';
+  const isAdmin = sessionStorage.getItem('isAdmin') === '1';
+
   card.innerHTML = `
     <div class="logo">🎮</div>
     <h1>Choose a Game</h1>
-    <p class="note">Tap a game below to select it. Paste your script in the box — for now it contains "Coming soon".</p>
+    <p class="note">Tap a game below to select it. Visitors can copy the script; admins can edit and save.</p>
 
     <div class="options">
       <div class="option" id="mm2">Murder Mystery 2</div>
       <div class="option" id="adopt">Adopt Me!</div>
     </div>
 
-    <textarea id="scriptBox">Coming soon</textarea>
+    <textarea id="scriptBox" ${isAdmin? '': 'readonly'}>${escapeHtml(savedScript)}</textarea>
+
+    <div class="admin-row">
+      ${isAdmin ? '<button id="saveBtn" class="admin-btn">Save (to browser)</button><button id="lockBtn" class="admin-btn">Lock</button>' : '<button id="adminBtn" class="admin-btn">Admin</button>'}
+      <button id="copyBtn" class="copy-btn">Copy</button>
+    </div>
 
     <div class="footer">© 2026 Roblox Delta Scripts</div>
   `;
 
-  // after injecting HTML, wire up interactions
-  const mm2 = document.getElementById('mm2');
-  const adopt = document.getElementById('adopt');
-  const textarea = document.getElementById('scriptBox');
+  // wire up
+  document.getElementById('mm2').addEventListener('click', selectOption);
+  document.getElementById('adopt').addEventListener('click', selectOption);
+  document.getElementById('copyBtn').addEventListener('click', copyScript);
 
-  [mm2, adopt].forEach(el => {
-    el.addEventListener('click', () => {
-      // visually select
-      mm2.classList.remove('selected');
-      adopt.classList.remove('selected');
-      el.classList.add('selected');
-      // focus the textarea so the user can paste
-      textarea.focus();
-      // place caret at end
-      const val = textarea.value;
-      textarea.value = '';
-      textarea.value = val;
-    });
-  });
+  if(isAdmin){
+    document.getElementById('saveBtn').addEventListener('click', saveScript);
+    document.getElementById('lockBtn').addEventListener('click', () => { sessionStorage.removeItem('isAdmin'); renderMain(); });
+  } else {
+    document.getElementById('adminBtn').addEventListener('click', openKeypadForAuth);
+  }
 }
+
+function selectOption(e){
+  const el = e.currentTarget;
+  document.querySelectorAll('.option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  const textarea = document.getElementById('scriptBox');
+  textarea.focus();
+  // move caret to end
+  const val = textarea.value; textarea.value = ''; textarea.value = val;
+}
+
+function copyScript(){
+  const textarea = document.getElementById('scriptBox');
+  // select and copy
+  if(textarea){
+    textarea.select();
+    textarea.setSelectionRange(0, 99999);
+    navigator.clipboard && navigator.clipboard.writeText ? navigator.clipboard.writeText(textarea.value).then(() => {
+      const btn = document.getElementById('copyBtn');
+      const orig = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = orig, 1200);
+    }).catch(() => { document.execCommand('copy'); alert('Copied'); }) : (document.execCommand('copy'), alert('Copied'));
+  }
+}
+
+function saveScript(){
+  const textarea = document.getElementById('scriptBox');
+  localStorage.setItem('adminScript', textarea.value);
+  const btn = document.getElementById('saveBtn');
+  const orig = btn.textContent;
+  btn.textContent = 'Saved';
+  setTimeout(() => btn.textContent = orig, 1200);
+}
+
+// Keypad logic
+function openKeypadForAuth(){
+  currentPin = '';
+  renderKeypad();
+  // mode: if no password in localStorage -> 'Set Password', else 'Enter Password'
+  const stored = localStorage.getItem('adminPassword');
+  keypadMode.textContent = stored ? 'Enter Password' : 'Set Password';
+  keypadInput.textContent = hidePin(currentPin);
+  keypadModal.style.display = 'flex';
+}
+
+closeKeypad.addEventListener('click', () => { keypadModal.style.display='none'; currentPin=''; });
+
+function renderKeypad(){
+  keysContainer.innerHTML = '';
+  for(let i=1;i<=9;i++){ const k=document.createElement('button'); k.className='key'; k.textContent=i; k.addEventListener('click', ()=>{ appendDigit(i); }); keysContainer.appendChild(k);} 
+  // last row
+  const zero=document.createElement('button'); zero.className='key'; zero.textContent='0'; zero.addEventListener('click', ()=>appendDigit(0));
+  const spacer=document.createElement('div'); spacer.style.visibility='hidden';
+  const enter=document.createElement('button'); enter.className='key action'; enter.textContent='OK'; enter.addEventListener('click', ()=>submitPin());
+  keysContainer.appendChild(spacer);
+  keysContainer.appendChild(zero);
+  keysContainer.appendChild(enter);
+}
+
+function appendDigit(d){ if(currentPin.length >= 12) return; currentPin += String(d); keypadInput.textContent = hidePin(currentPin); }
+backspace.addEventListener('click', ()=>{ currentPin = currentPin.slice(0,-1); keypadInput.textContent = hidePin(currentPin); });
+clearKeypad.addEventListener('click', ()=>{ currentPin=''; keypadInput.textContent = hidePin(currentPin); });
+submitKeypad.addEventListener('click', submitPin);
+
+function hidePin(pin){ if(!pin) return '●●●●●●●●●'; return '●'.repeat(pin.length) + ''.padEnd(Math.max(0,9-pin.length),'○'); }
+
+function submitPin(){
+  const stored = localStorage.getItem('adminPassword');
+  if(!stored){
+    // set password flow
+    if(currentPin.length < 4){ alert('Please choose a PIN of at least 4 digits.'); return; }
+    localStorage.setItem('adminPassword', currentPin);
+    sessionStorage.setItem('isAdmin','1');
+    keypadModal.style.display='none';
+    currentPin='';
+    renderMain();
+    setTimeout(()=>alert('Admin password set in your browser. Only you can edit from this device.'),100);
+    return;
+  }
+  // check PIN
+  if(currentPin === stored){
+    sessionStorage.setItem('isAdmin','1');
+    keypadModal.style.display='none';
+    currentPin='';
+    renderMain();
+    return;
+  }
+  // wrong
+  alert('Incorrect password');
+  currentPin=''; keypadInput.textContent = hidePin(currentPin);
+}
+
+// escape HTML for script insertion
+function escapeHtml(str){ return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+// initialize page
+(function(){ renderMain(); })();
+
+// For convenience: if adminPassword not set and user wants to initialize with known code 764322901, they must set it locally using keypad. We do NOT store any secret in the published code.
 </script>
 
 </body>
