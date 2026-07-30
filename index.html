@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roblox Delta Scripts</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#0d1117,#161b22,#0d1117);
+    overflow:hidden;
+}
+
+body::before{
+    content:"";
+    position:absolute;
+    width:600px;
+    height:600px;
+    background:#00ffae20;
+    border-radius:50%;
+    filter:blur(120px);
+}
+
+.card{
+    position:relative;
+    z-index:2;
+    width:420px;
+    padding:40px;
+    text-align:center;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:25px;
+    box-shadow:0 20px 60px rgba(0,0,0,.45);
+}
+
+.logo{
+    font-size:60px;
+}
+
+h1{
+    color:white;
+    margin-top:15px;
+    font-size:34px;
+}
+
+p{
+    color:#b5b5b5;
+    margin-top:10px;
+    margin-bottom:30px;
+}
+
+button{
+    width:100%;
+    padding:16px;
+    border:none;
+    border-radius:14px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
+    color:white;
+    background:linear-gradient(90deg,#00d084,#00ffae);
+    transition:.25s;
+}
+
+button:hover{
+    transform:scale(1.04);
+    box-shadow:0 10px 30px rgba(0,255,174,.35);
+}
+
+.footer{
+    margin-top:25px;
+    color:#777;
+    font-size:13px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+
+<div class="logo">🎮</div>
+
+<h1>Roblox Delta Scripts</h1>
+
+<p>Discover modern Roblox Lua resources and script collections.</p>
+
+<button onclick="alert('Coming Soon!')">
+Start
+</button>
+
+<div class="footer">
+© 2026 Roblox Delta Scripts
+</div>
+
+</div>
+
+</body>
+</html>
